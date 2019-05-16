@@ -2,8 +2,7 @@
 
 
 const title = document.querySelector('#title');
-const BASE_COLOR = "rgb(52, 73, 94)";
-const OTHER_COLOR = "#7f8c8d";
+const CLICKED_CLASS = "clicked";
 
 //function handleResize(event){
     //console.log("I have been resized");
@@ -11,19 +10,24 @@ const OTHER_COLOR = "#7f8c8d";
 //}
 
 function handleClick(){
-    const currentColor = title.style.color;
-    //console.log(currentColor);
-    
-    if(currentColor === BASE_COLOR)
-        title.style.color = OTHER_COLOR;
-    else
-        title.style.color = BASE_COLOR;
-    
-    
+    title.classList.toggle(CLICKED_CLASS);
+    /*
+    const hasClassName = title.classList.contains(CLICKED_CLASS);
+    //const currentClassname = title.className;
+    //console.log(currentClassname);
+    if(!hasClassName){
+        //title.className = CLICKED_CLASS;
+        title.classList.add(CLICKED_CLASS);
+    }
+        
+    else{
+        // title.className = "";
+        title.classList.remove(CLICKED_CLASS);
+    }   
+    */
 }
 
 function init(){
-    title.style.color = BASE_COLOR;
     title.addEventListener("click", handleClick);
     //title.addEventListener("mouseenter", handleClick);
 }
