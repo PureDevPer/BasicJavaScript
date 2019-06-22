@@ -1,4 +1,4 @@
-fetch('https://yts.am/api/v2/list_movies.json')
+fetch('https://yts.lt/api/v2/list_movies.json')
 	.then(response => {
 		console.log(response);
 		return response.json();
