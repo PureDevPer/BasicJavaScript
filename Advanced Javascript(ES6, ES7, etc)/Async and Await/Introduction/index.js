@@ -1,5 +1,5 @@
 const getMoviesPromise = () => {
-	fetch('https://yts.am/api/v2/list_movies.json')
+	fetch('https://yts.lt/api/v2/list_movies.json')
 		.then(response => {
 			console.log(response);
 			return response.json();
@@ -9,7 +9,7 @@ const getMoviesPromise = () => {
 };
 
 const getMoviesAsync = async () => {
-	const response = await fetch('https://yts.am/api/v2/list_movies.json');
+	const response = await fetch('https://yts.lt/api/v2/list_movies.json');
 	const json = await response.json();
 	console.log(response);
 };
