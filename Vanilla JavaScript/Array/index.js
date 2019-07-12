@@ -25,3 +25,7 @@ console.log(daysOfWeek);
 daysOfWeek.splice(0, 2);
 console.log(daysOfWeek);
 // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]
+
+for (const day of daysOfWeek) {
+	console.log(day);
+}
