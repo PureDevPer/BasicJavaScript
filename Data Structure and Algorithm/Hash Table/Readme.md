@@ -8,6 +8,8 @@
 - The `separate chaining` technique consists of creating a linked list for each position of the table and storing the elements in it.
 - It is the simplest technique to handle collisions; however, it requires additional memory ouside the `HashTable` instance
 
+### Linear Probing -
+
 # Hash Set
 
 - The Hash set consists of a set, but to insert, remove, or get elements, we use a `hashCode` function
