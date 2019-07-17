@@ -1,3 +1,4 @@
+// Kruskal's algorithm
 const INF = Number.MAX_SAFE_INTEGER;
 
 const find = (i, parent) => {
