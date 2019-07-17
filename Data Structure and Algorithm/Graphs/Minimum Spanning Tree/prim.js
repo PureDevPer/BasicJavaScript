@@ -1,3 +1,4 @@
+// Prim's Algorithm
 const INF = Number.MAX_SAFE_INTEGER;
 
 const minKey = (graph, key, visited) => {
