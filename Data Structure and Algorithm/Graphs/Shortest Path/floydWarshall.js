@@ -1,3 +1,4 @@
+// Floyd-Warshall
 const floydWarshall = graph => {
 	const dist = [];
 	const { length } = graph;
