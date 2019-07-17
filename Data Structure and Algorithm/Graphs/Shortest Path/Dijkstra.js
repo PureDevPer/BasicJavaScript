@@ -46,7 +46,6 @@ const graph = [
 	[0, 0, 0, 3, 0, 2],
 	[0, 0, 0, 0, 0, 0]
 ];
-
 for (let i = 0; i < graph.length; ++i) {
 	console.log(dijkstra(graph, i));
 }
