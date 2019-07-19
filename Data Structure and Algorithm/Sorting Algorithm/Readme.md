@@ -28,3 +28,20 @@
 1. First, we need to select a value from the array called **pivot**, which will be the value at the middle of the array
 2. We will create two pointers (references) - the left-hand side one will point to the first value of the array, and the right-hand side one will point to the last value of the array. We will move the left pointer until we find a value that is bigger than the pivot, and we will also move the right pointer until we find a vlue that is less than the pivot and swap them. We will repeat this process until the left-hand side pointer passes the right-hand side pointer. This process helps to have values lower than the pivot reference before the pivot and values greater than the pivot after the pivot reference. This is called the **partition** operation.
 3. Next, the algorithm repeats the previous two steps for smaller arrays (subarrays with smaller values and then subarrays with greater values) until the arrays are completely sorted
+
+## Counting sort
+
+- Distribution sort algorithms use auxiliary data structures (known as buckets) that are organized and then merged, resulting in the sorted array
+- The `counting sort` uses a temporary array that will store how many times each element appears in the original array
+- After all the elements are counted, the temporary array is sorted and it can be iterated to construct the resultant sorted array
+- O(n + k), where k is the size of the temporary counting array. It requires more memory for the temporary array
+
+## Bucket sort
+
+- The `bucket sort` algorithm (also known as bin sort) is also distributed sorting algorithm that separates the elements into different buckets (smaller arrays), and then uses a simpler sorting algorithm, such as the insertion sort (a good algorithm for small arrays), to sort each bucket.
+- It then merges all the buckets into the resultant sorted array
+
+## Radix sort
+
+- The `radix sort` algorithm is a distribution sort algorithm that distributes the integers into buckets based on a numbers significant digit or value
+- The radix is based on the number system of the values of the array
