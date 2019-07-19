@@ -19,3 +19,12 @@
 
 - The merge sort is a divide-and-conquer algorith. The idea behind it is to divide the original array into saller arrays until each small array has only one position, and then merge these smaller arrays into bigger ones until we have a single big array at the end that is sorted
 - O(n log(n))
+
+## Quick sort
+
+- It uses the divide-and-conquer approach, dividing the original array into smaller ones (but without splitting them as the merge sort does) to do the sorting
+- O(n log(n)), it usually performs better than other O(n log(n)) sorting algorithms.
+
+1. First, we need to select a value from the array called **pivot**, which will be the value at the middle of the array
+2. We will create two pointers (references) - the left-hand side one will point to the first value of the array, and the right-hand side one will point to the last value of the array. We will move the left pointer until we find a value that is bigger than the pivot, and we will also move the right pointer until we find a vlue that is less than the pivot and swap them. We will repeat this process until the left-hand side pointer passes the right-hand side pointer. This process helps to have values lower than the pivot reference before the pivot and values greater than the pivot after the pivot reference. This is called the **partition** operation.
+3. Next, the algorithm repeats the previous two steps for smaller arrays (subarrays with smaller values and then subarrays with greater values) until the arrays are completely sorted
