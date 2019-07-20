@@ -12,3 +12,4 @@ const minCoinChange = (coins, amount) => {
 };
 
 console.log(minCoinChange([1, 5, 10, 25], 36)); // [25, 10, 1]
+console.log(minCoinChange([1, 1, 4], 6)); // [4, 1, 1]
