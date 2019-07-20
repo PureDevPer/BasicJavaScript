@@ -13,4 +13,5 @@ const matrixChain = (p, i = 1, j = p.length - 1) => {
 	return min;
 };
 
-console.log(matrixChain([10, 100, 5, 50, 1]));
+console.log(matrixChain([10, 100, 5, 50, 1])); // 1750
+console.log(matrixChain([10, 100, 5, 50, 2])); // 3500
