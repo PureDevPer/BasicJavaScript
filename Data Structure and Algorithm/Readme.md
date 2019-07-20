@@ -10,9 +10,7 @@
 | O(n<sup>c</sup>) | Polynomial       |
 | O(c<sup>n</sup>) | Exponential      |
 
-```
-O(1) < O(log(n)) < O(n) < O(n<sup>2</sup>) < O(c<sup>n</sup>)
-```
+- O(1) < O(log(n)) < O(n) < O(n<sup>2</sup>) < O(c<sup>n</sup>)
 
 ## O(1) - Constant
 
@@ -97,14 +95,12 @@ T(N) = O(1) + 2*T(N-1) where N > 1
 
 If repeatedly expanding the last term,
 
-```
 T(N) = 3*O(1) + 4*T(N-2)
 T(N) = 7*O(1) + 8*T(N-3)
 ...
 T(N) = (2<sup>N-1</sup>-1)*O(1) + (2<sup>N-1</sup>)*T(1)
-T(N) = (2<sup>N</sup> - 1)*O(1)
+T(N) = (2<sup>N</sup> - 1)\*O(1)
 T(N) = O(2<sup>N</sup>)
-```
 
 ## Big-O Cheat Sheet
 
