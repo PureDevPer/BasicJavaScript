@@ -10,7 +10,9 @@
 | O(n<sup>c</sup>) | Polynomial       |
 | O(c<sup>n</sup>) | Exponential      |
 
-`O(1) < O(log(n)) < O(n) < O(n<sup>2</sup>) < O(c<sup>n</sup>)`
+```
+O(1) < O(log(n)) < O(n) < O(n<sup>2</sup>) < O(c<sup>n</sup>)
+```
 
 ## O(1) - Constant
 
@@ -28,21 +30,21 @@ const half = n => {
 };
 ```
 
-| **Iteration** |        n        |
-| :-----------: | :-------------: |
-|       0       |        n        |
-|       1       |       n/2       |
-|       2       |       n/4       |
-|      ...      |       ...       |
-|      ...      |       ...       |
-|       k       | n/2<sup>k</sup> |
+| **Iteration** |         n         |
+| :-----------: | :---------------: |
+|       0       |         n         |
+|       1       |       n / 2       |
+|       2       |       n / 4       |
+|      ...      |        ...        |
+|      ...      |        ...        |
+|       k       | n / 2<sup>k</sup> |
 
 2<sup>k</sup> = n -> k = log(n)
 
 ## O(n) - Linear
 
 ```javascript
-const sequentialSearch = (array, value) => {
+const sequentialSearch =alue) => {
 	for (let i = 0; i < array.length; ++i) {
 		if (value === array[i]) {
 			return i;
@@ -108,22 +110,12 @@ T(N) = O(2<sup>N</sup>)
 
 ![alt text](https://he-s3.s3.amazonaws.com/media/uploads/ece920b.png)
 
-### Data Structure
-
 ![alt text](https://he-s3.s3.amazonaws.com/media/uploads/c14cb1f.JPG)
-
-### Searching
 
 ![alt text](https://he-s3.s3.amazonaws.com/media/uploads/1e0079d.JPG)
 
-### Sorting
-
 ![alt text](https://he-s3.s3.amazonaws.com/media/uploads/2d5308d.JPG)
 
-### Heaps
-
 ![alt text](https://he-s3.s3.amazonaws.com/media/uploads/3a17756.JPG)
-
-### Graphs
 
 ![alt text](https://he-s3.s3.amazonaws.com/media/uploads/526213e.JPG)
