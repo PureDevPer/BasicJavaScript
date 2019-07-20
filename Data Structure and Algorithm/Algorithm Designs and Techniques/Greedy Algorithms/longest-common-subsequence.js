@@ -10,4 +10,5 @@ const lcs = (wordX, wordY, m = wordX.length, n = wordY.length) => {
 	return a > b ? a : b;
 };
 
-console.log(lcs('acbaed', 'abcadf'));
+console.log(lcs('acbaed', 'abcadf')); // 4
+console.log(lcs('cdeftg', 'cdeqeta')); // 4
