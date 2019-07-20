@@ -25,3 +25,4 @@ const knapSack = (capacity, weights, values) => {
 
 console.log(knapSack(5, [2, 3, 4], [3, 4, 5])); // 7
 console.log(knapSack(6, [2, 3, 4], [3, 4, 5])); // 8.25
+// r = (6 - 5) / 4
