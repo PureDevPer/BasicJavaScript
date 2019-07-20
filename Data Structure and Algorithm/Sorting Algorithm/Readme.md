@@ -3,12 +3,12 @@
 ## Bubble sort
 
 - The `bubble sort` algorithm compares every two adjacent values and swaps them if the first one is bigger than the second one. It has this name because the values tend to move up into the correct order, like bubbles rising to the surface
-- O(n^2)
+- O(n<sub>2</sub>)
 
 ## Selection sort
 
 - The `selection sort` algorithm is an in-place comparison sort algorithm. The general idea of the selection sort is to find the minimum value in the data structure place it in the first position, then find the second minimum value, place it in the second position, and so on.
-- O(n^2)
+- O(n<sub>2</sub>)
 
 ## Insertion sort
 
