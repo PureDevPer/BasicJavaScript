@@ -25,6 +25,35 @@ The **minimum coin change problem** is a variation of the **coin change problem*
 
 The min-coin change solution consists of finding the minimum number of coins for _n_. But to do this, first we need to find the solution for every _x<n_. Then, we can build up the solution out of the solutions for smaller values.
 
+Let's suppose that there are 3 coins: `1` cent, `5` cents, `10` cents
+
+```javascript
+const coins = [1, 5, 10];
+```
+
+| **Change** | **#of 1 cents** | **#of 5 cents** | **#of 10 cents** |
+| :--------: | :-------------: | :-------------: | :--------------: |
+|     1      |        1        |        1        |        1         |
+|     2      |        2        |        2        |        2         |
+|     3      |        3        |        3        |        3         |
+|     4      |        4        |        4        |        4         |
+|     5      |        5        |        1        |        1         |
+|     6      |        6        |        2        |        2         |
+|     7      |        7        |        3        |        3         |
+|     8      |        8        |        4        |        4         |
+|     9      |        9        |        5        |        5         |
+|     10     |       10        |        2        |        1         |
+|     11     |       11        |        3        |        2         |
+|     12     |       12        |        4        |        3         |
+
+Above table, we can find an equation like below
+
+```javascript
+dp[j] = Math.min(dp[j], dp[j - coin[i]]) + 1;
+```
+
+`dp[j]` means change we need to get. Therefore, `dp[j-coin[i]]` indicates `change - coin`.
+
 ### The knapsack problem
 
 The knapsack problem is a combinatorial optimization problem. It can be described as follows: given a fixed-size knapsack with a capacity to carry W amount of weight and a set of items that have a value and weight, find the best solution in a way to fill the knapsack with the most valuable items so that the total weight is less than or equal to W
