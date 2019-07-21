@@ -57,3 +57,27 @@ dp[j] = Math.min(dp[j], dp[j - coin[i]]) + 1;
 ### The knapsack problem
 
 The knapsack problem is a combinatorial optimization problem. It can be described as follows: given a fixed-size knapsack with a capacity to carry W amount of weight and a set of items that have a value and weight, find the best solution in a way to fill the knapsack with the most valuable items so that the total weight is less than or equal to W
+
+### The longest common subsequence
+
+The **longest common subsequence (LCS)** consists of finding the length of the longest subsequence in two string sequences. The longest subsequence is a sequence that appears in the same relative order but is not necessarily contiguous (not a substring) in both strings.
+
+For example,
+
+```javascript
+let str1 = 'acbaed';
+let str2 = 'abcadf';
+```
+
+LCS: `acad` with length 4
+
+### Matrix Chain Multiplication
+
+The problem consists of finding the best way (order) of multiplying a set of matrices.
+To multily two matrices, A being a matrix m by n, and B a matrix n by p. The result is matrix C, n by p. As multiplication is associative, we can muliply matrices in any order (Consider A*B*C\*D).
+
+- (A(B(CD)))
+- ((AB)(CD))
+- (((AB)C)D)
+- ((A(BC))D)
+- (A((BC))D)
