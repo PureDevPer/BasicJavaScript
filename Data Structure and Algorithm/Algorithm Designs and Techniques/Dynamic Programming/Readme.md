@@ -21,6 +21,8 @@
 
 ### The minimum coin change problem
 
+- https://stackoverflow.com/questions/57135424/javascript-recursion-why-is-value-increasing-without-increment-code
+
 The **minimum coin change problem** is a variation of the **coin change problem**. The coin change problem consists of finding out in how many ways we can make change for a particular amount of cents using a given amount of set denominations (d<sub>1</sub> ... d<sub>n</sub>). The minimum coin change problem consists of finding the minimum number of coins needed to make a particular amount of cents using a given amount of set denominations (d<sub>1</sub> ... d<sub>n</sub>).
 
 The min-coin change solution consists of finding the minimum number of coins for _n_. But to do this, first we need to find the solution for every _x<n_. Then, we can build up the solution out of the solutions for smaller values.
