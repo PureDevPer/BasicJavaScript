@@ -2,7 +2,6 @@ class Node {
 	constructor(element) {
 		this.element = element;
 		this.next = null;
-		this.prev = null;
 	}
 }
 
@@ -10,7 +9,6 @@ class CircularLinkedList {
 	constructor() {
 		this.count = 0;
 		this.head = null;
-		this.tail = null;
 	}
 
 	push(element) {
