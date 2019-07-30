@@ -32,6 +32,8 @@
 2. We will create two pointers (references) - the left-hand side one will point to the first value of the array, and the right-hand side one will point to the last value of the array. We will move the left pointer until we find a value that is bigger than the pivot, and we will also move the right pointer until we find a vlue that is less than the pivot and swap them. We will repeat this process until the left-hand side pointer passes the right-hand side pointer. This process helps to have values lower than the pivot reference before the pivot and values greater than the pivot after the pivot reference. This is called the **partition** operation.
 3. Next, the algorithm repeats the previous two steps for smaller arrays (subarrays with smaller values and then subarrays with greater values) until the arrays are completely sorted
 
+- https://www.geeksforgeeks.org/quick-sort/
+
 ## Counting sort
 
 - Distribution sort algorithms use auxiliary data structures (known as buckets) that are organized and then merged, resulting in the sorted array
