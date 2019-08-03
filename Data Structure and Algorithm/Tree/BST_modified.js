@@ -170,9 +170,9 @@ tree.insert(18);
 tree.insert(25);
 tree.insert(6);
 
-//tree.inOrderTraverse(val => console.log(val));
-//tree.preOrderTraverse(val=>console.log(val));
-//tree.postOrderTraverse(val=>console.log(val));
+tree.inOrderTraverse(val => console.log(val));
+tree.preOrderTraverse(val => console.log(val));
+tree.postOrderTraverse(val => console.log(val));
 
 console.log(tree.search(1) ? 'Key 1 found.' : 'Key 1 not found.');
 console.log(tree.search(8) ? 'Key 8 found.' : 'Key 8 not found.');
