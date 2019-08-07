@@ -34,6 +34,10 @@
 
 - https://www.geeksforgeeks.org/quick-sort/
 
+## Heap Sort
+
+- https://www.geeksforgeeks.org/heap-sort/
+
 ## Counting sort
 
 - Distribution sort algorithms use auxiliary data structures (known as buckets) that are organized and then merged, resulting in the sorted array
