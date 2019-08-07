@@ -83,6 +83,7 @@ class MaxHeap {
 		}
 	}
 
+	// This method removes the maximum value (max heap) and returns it
 	extract() {
 		if (this.isEmpty()) {
 			return null;
@@ -97,6 +98,8 @@ class MaxHeap {
 		return removedValue;
 	}
 
+	// Heapify
+	// The sift down operation consists of swapping the element with its greatest child (max heap)
 	siftDown(index) {
 		let element = index;
 		const left = this.getLeftIndex(index);
