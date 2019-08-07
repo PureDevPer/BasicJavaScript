@@ -8,7 +8,7 @@
 
 The binary heap is a special binary tree with the following two properties:
 
-- It is a complete binary tree, meaning all levels of the tree have both left and right children (with the execption of the last-level leaves), and the last level has all children as left as possible. This is called as **shpae property**
+- It is a complete binary tree, meaning all levels of the tree have both left and right children (with the execption of the last-level leaves), and the last level has all children as left as possible. This is called as **shape property**
 - A binary heap is either a min heap or a max heap. The min heap allows you to quickly extract the minimum value of the tree, and the max heap allows you to quickly extract the maximum value of the tree. All nodes are either greater than or equal to max heap, or less than or equal to min heap, each of its child nodes. This is called **heap property**
 
 ## The Heap Sort Algorithm
