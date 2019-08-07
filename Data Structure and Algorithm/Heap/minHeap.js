@@ -79,6 +79,7 @@ class MinHeap {
 		}
 	}
 
+	// This method removes the minimum value (min heap) and returns it
 	extract() {
 		if (this.isEmpty()) {
 			return null;
@@ -93,6 +94,8 @@ class MinHeap {
 		return removedValue;
 	}
 
+	// Heapify
+	// The sift down operation consists of swapping the element with its smallest child (min heap)
 	siftDown(index) {
 		let element = index;
 		const left = this.getLeftIndex(index);
