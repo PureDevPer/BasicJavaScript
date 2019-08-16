@@ -29,8 +29,10 @@ const sort = (array, low, high) => {
 
 const quickSort = array => {
 	sort(array, 0, array.length - 1);
+	return array;
 };
 
+/*
 const printArray = array => {
 	const { length } = array;
 	let str = '';
@@ -39,7 +41,7 @@ const printArray = array => {
 	}
 	console.log(str);
 };
-
+*/
 const arr = [5, 4, 3, 2, 1];
-quickSort(arr);
-printArray(arr);
+console.log(quickSort(arr));
+// printArray(arr);
