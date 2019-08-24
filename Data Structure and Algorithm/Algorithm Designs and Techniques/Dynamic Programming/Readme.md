@@ -21,7 +21,7 @@
 
 ## Solution
 
-<details><summary><p>Solution - The minimum coin change problem</p></summary>
+<details><summary><p>The minimum coin change problem</p></summary>
 <p>
 
 ### The minimum coin change problem
@@ -64,7 +64,7 @@ dp[j] = Math.min(dp[j], dp[j - coin[i]]) + 1;
 </p>
 </details>
 
-<details><summary><p>Solution - The knapsack problem</p></summary>
+<details><summary><p>The knapsack problem</p></summary>
 <p>
 
 ### The Knapsack Problem
@@ -136,7 +136,7 @@ if (i === 0 || w === 0) {
 <details><summary><h4>i=1</h4></summary>
 <p>
 
-##### i=1, w=1
+#### i=1, w=1
 
 ```javascript
 weights[i - 1] <= w
@@ -157,7 +157,7 @@ kS[1][1] = kS[1 - 1][1] = kS[0][1] = 0
 |  **2**  |   0   |   -   |   -   |   -   |   -   |   -   |
 |  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
 
-##### i=1, w=2
+#### i=1, w=2
 
 ```javascript
 weights[i - 1] <= w
@@ -195,7 +195,7 @@ kS[1][2] = Math.Max(3, 0) = 3
 |  **2**  |   0   |   -   |   -   |   -   |   -   |   -   |
 |  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
 
-##### i=1, w=3
+#### i=1, w=3
 
 ```javascript
 weights[i - 1] <= w
@@ -233,7 +233,7 @@ kS[1][3] = Math.Max(3, 0) = 3
 |  **2**  |   0   |   -   |   -   |   -   |   -   |   -   |
 |  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
 
-##### i=1, w=4
+#### i=1, w=4
 
 ```javascript
 weights[i - 1] <= w
@@ -271,7 +271,7 @@ kS[1][4] = Math.Max(3, 0) = 3
 |  **2**  |   0   |   -   |   -   |   -   |   -   |   -   |
 |  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
 
-##### i=1, w=5
+#### i=1, w=5
 
 ```javascript
 weights[i - 1] <= w
@@ -315,19 +315,319 @@ kS[1][5] = Math.Max(3, 0) = 3
 <details><summary><h4>i=2</h4></summary>
 <p>
 
+#### i=2, w=1
+
+```javascript
+weights[i - 1] <= w
+weights[2-1] <= 1
+weights[1] <= 1
+3 <= 1
+
+else {
+	kS[i][w] = kS[i - 1][w];
+}
+
+kS[2][1] = kS[2 - 1][1] = kS[1][1] = 0
+```
+
+| **i\w** | **0** | **1** | **2** | **3** | **4** | **5** |
+| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  **0**  |   0   |   0   |   0   |   0   |   0   |   0   |
+|  **1**  |   0   |   0   |   3   |   3   |   3   |   3   |
+|  **2**  |   0   |   0   |   -   |   -   |   -   |   -   |
+|  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
+
+#### i=2, w=2
+
+```javascript
+weights[i - 1] <= w
+weights[2-1] <= 2
+weights[1] <= 2
+3 <= 2
+
+else {
+	kS[i][w] = kS[i - 1][w];
+}
+
+kS[2][2] = kS[2 - 1][2] = kS[1][2] = 3
+```
+
+| **i\w** | **0** | **1** | **2** | **3** | **4** | **5** |
+| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  **0**  |   0   |   0   |   0   |   0   |   0   |   0   |
+|  **1**  |   0   |   0   |   3   |   3   |   3   |   3   |
+|  **2**  |   0   |   0   |   3   |   -   |   -   |   -   |
+|  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
+
+#### i=2, w=3
+
+```javascript
+weights[i - 1] <= w
+weights[2-1] <= 3
+weights[1] <= 3
+3 <= 3
+
+else if (weights[i - 1] <= w) {
+	kS[i][w] = Math.max(
+		values[i - 1] + kS[i - 1][w - weights[i - 1]],
+		kS[i - 1][w]
+	);
+}
+
+values[i - 1] + kS[i - 1][w - weights[i - 1]]
+    = values[2 - 1] + kS[2 - 1][3 - weights[2 - 1]]
+    = values[1] + kS[1][3 - weights[1]]
+    = values[1] + kS[1][3 - 3]
+    = values[1] + kS[1][0]
+    = 4 + 0
+    = 4
+
+kS[i - 1][w]
+    = kS[2 - 1][3]
+    = kS[1][3]
+    = 3
+
+kS[2][3] = Math.Max(4, 3) = 4
+```
+
+| **i\w** | **0** | **1** | **2** | **3** | **4** | **5** |
+| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  **0**  |   0   |   0   |   0   |   0   |   0   |   0   |
+|  **1**  |   0   |   0   |   3   |   3   |   3   |   3   |
+|  **2**  |   0   |   0   |   3   |   4   |   -   |   -   |
+|  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
+
+#### i=2, w=4
+
+```javascript
+weights[i - 1] <= w
+weights[2-1] <= 4
+weights[1] <= 4
+3 <= 4
+
+else if (weights[i - 1] <= w) {
+	kS[i][w] = Math.max(
+		values[i - 1] + kS[i - 1][w - weights[i - 1]],
+		kS[i - 1][w]
+	);
+}
+
+values[i - 1] + kS[i - 1][w - weights[i - 1]]
+    = values[2 - 1] + kS[2 - 1][4 - weights[2 - 1]]
+    = values[1] + kS[1][4 - weights[1]]
+    = values[1] + kS[1][4 - 3]
+    = values[1] + kS[1][1]
+    = 4 + 0
+    = 4
+
+kS[i - 1][w]
+    = kS[2 - 1][4]
+    = kS[1][4]
+    = 3
+
+kS[2][4] = Math.Max(4, 3) = 4
+```
+
+| **i\w** | **0** | **1** | **2** | **3** | **4** | **5** |
+| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  **0**  |   0   |   0   |   0   |   0   |   0   |   0   |
+|  **1**  |   0   |   0   |   3   |   3   |   3   |   3   |
+|  **2**  |   0   |   0   |   3   |   4   |   4   |   -   |
+|  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
+
+#### i=2, w=5
+
+```javascript
+weights[i - 1] <= w
+weights[2-1] <= 5
+weights[1] <= 5
+3 <= 4
+
+else if (weights[i - 1] <= w) {
+	kS[i][w] = Math.max(
+		values[i - 1] + kS[i - 1][w - weights[i - 1]],
+		kS[i - 1][w]
+	);
+}
+
+values[i - 1] + kS[i - 1][w - weights[i - 1]]
+    = values[2 - 1] + kS[2 - 1][5 - weights[2 - 1]]
+    = values[1] + kS[1][5 - weights[1]]
+    = values[1] + kS[1][5 - 3]
+    = values[1] + kS[1][2]
+    = 4 + 3
+    = 7
+
+kS[i - 1][w]
+    = kS[2 - 1][5]
+    = kS[1][5]
+    = 3
+
+kS[2][5] = Math.Max(7, 3) = 7
+```
+
+| **i\w** | **0** | **1** | **2** | **3** | **4** | **5** |
+| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  **0**  |   0   |   0   |   0   |   0   |   0   |   0   |
+|  **1**  |   0   |   0   |   3   |   3   |   3   |   3   |
+|  **2**  |   0   |   0   |   3   |   4   |   4   |   7   |
+|  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
+
 </p>
 </details>
 
 <details><summary><h4>i=3</h4></summary>
 <p>
 
-</p>
-</details>
+#### i=3, w=1
+
+```javascript
+weights[i - 1] <= w
+weights[3-1] <= 1
+weights[2] <= 1
+4 <= 1
+
+else {
+	kS[i][w] = kS[i - 1][w];
+}
+
+kS[3][1] = kS[3 - 1][1] = kS[2][1] = 0
+```
+
+| **i\w** | **0** | **1** | **2** | **3** | **4** | **5** |
+| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  **0**  |   0   |   0   |   0   |   0   |   0   |   0   |
+|  **1**  |   0   |   0   |   3   |   3   |   3   |   3   |
+|  **2**  |   0   |   0   |   3   |   4   |   4   |   7   |
+|  **3**  |   0   |   0   |   -   |   -   |   -   |   -   |
+
+#### i=3, w=2
+
+```javascript
+weights[i - 1] <= w
+weights[3-1] <= 2
+weights[2] <= 2
+4 <= 2
+
+else {
+	kS[i][w] = kS[i - 1][w];
+}
+
+kS[3][2] = kS[3 - 1][2] = kS[2][2] = 3
+```
+
+| **i\w** | **0** | **1** | **2** | **3** | **4** | **5** |
+| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  **0**  |   0   |   0   |   0   |   0   |   0   |   0   |
+|  **1**  |   0   |   0   |   3   |   3   |   3   |   3   |
+|  **2**  |   0   |   0   |   3   |   4   |   4   |   7   |
+|  **3**  |   0   |   0   |   3   |   -   |   -   |   -   |
+
+#### i=3, w=3
+
+```javascript
+weights[i - 1] <= w
+weights[3-1] <= 3
+weights[2] <= 3
+4 <= 3
+
+else {
+	kS[i][w] = kS[i - 1][w];
+}
+
+kS[3][3] = kS[3 - 1][3] = kS[2][3] = 4
+```
+
+| **i\w** | **0** | **1** | **2** | **3** | **4** | **5** |
+| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  **0**  |   0   |   0   |   0   |   0   |   0   |   0   |
+|  **1**  |   0   |   0   |   3   |   3   |   3   |   3   |
+|  **2**  |   0   |   0   |   3   |   4   |   4   |   7   |
+|  **3**  |   0   |   0   |   3   |   4   |   -   |   -   |
+
+#### i=3, w=4
+
+```javascript
+weights[i - 1] <= w
+weights[3-1] <= 4
+weights[2] <= 4
+4 <= 4
+
+else if (weights[i - 1] <= w) {
+	kS[i][w] = Math.max(
+		values[i - 1] + kS[i - 1][w - weights[i - 1]],
+		kS[i - 1][w]
+	);
+}
+
+values[i - 1] + kS[i - 1][w - weights[i - 1]]
+    = values[3 - 1] + kS[3 - 1][4 - weights[3 - 1]]
+    = values[2] + kS[2][4 - weights[2]]
+    = values[2] + kS[2][4 - 4]
+    = values[2] + kS[2][0]
+    = 5 + 0
+    = 5
+
+kS[i - 1][w]
+    = kS[3 - 1][4]
+    = kS[2][4]
+    = 4
+
+kS[3][4] = Math.Max(5, 4) = 5
+```
+
+| **i\w** | **0** | **1** | **2** | **3** | **4** | **5** |
+| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  **0**  |   0   |   0   |   0   |   0   |   0   |   0   |
+|  **1**  |   0   |   0   |   3   |   3   |   3   |   3   |
+|  **2**  |   0   |   0   |   3   |   4   |   4   |   7   |
+|  **3**  |   0   |   0   |   3   |   4   |   5   |   -   |
+
+#### i=3, w=5
+
+```javascript
+weights[i - 1] <= w
+weights[3-1] <= 5
+weights[2] <= 5
+4 <= 5
+
+else if (weights[i - 1] <= w) {
+	kS[i][w] = Math.max(
+		values[i - 1] + kS[i - 1][w - weights[i - 1]],
+		kS[i - 1][w]
+	);
+}
+
+values[i - 1] + kS[i - 1][w - weights[i - 1]]
+    = values[3 - 1] + kS[3 - 1][5 - weights[3 - 1]]
+    = values[2] + kS[2][5 - weights[2]]
+    = values[2] + kS[2][5 - 4]
+    = values[2] + kS[2][1]
+    = 5 + 0
+    = 5
+
+kS[i - 1][w]
+    = kS[3 - 1][5]
+    = kS[2][5]
+    = 7
+
+kS[3][7] = Math.Max(5, 7) = 7
+```
+
+| **i\w** | **0** | **1** | **2** | **3** | **4** | **5** |
+| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  **0**  |   0   |   0   |   0   |   0   |   0   |   0   |
+|  **1**  |   0   |   0   |   3   |   3   |   3   |   3   |
+|  **2**  |   0   |   0   |   3   |   4   |   4   |   7   |
+|  **3**  |   0   |   0   |   3   |   4   |   5   |   7   |
 
 </p>
 </details>
 
-<details><summary><p>Solution - The longest common subsequence</p></summary>
+</p>
+</details>
+
+<details><summary><p>The longest common subsequence</p></summary>
 <p>
 
 ### The Longest Common Subsequence
@@ -346,7 +646,7 @@ LCS: `acad` with length 4
 </p>
 </details>
 
-<details><summary><p>Solution - Matrix Chain Multiplication</p></summary>
+<details><summary><p>Matrix Chain Multiplication</p></summary>
 <p>
 
 ### Matrix Chain Multiplication
