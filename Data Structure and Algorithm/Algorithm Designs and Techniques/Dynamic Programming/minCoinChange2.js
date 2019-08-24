@@ -9,6 +9,7 @@ const changeCoin = amount => {
 	for (let i = 0; i < coin.length; ++i) {
 		console.log(`Coin: ${coin[i]}`);
 		for (let j = coin[i]; j <= amount; ++j) {
+			// dp[j-coin[i]]: change(j) - coin
 			dp[j] = Math.min(dp[j], dp[j - coin[i]]) + 1;
 			console.log(`${j}: ${dp[j]}`);
 		}
