@@ -19,10 +19,12 @@
 - **Matrix chain multiplication**: In this problem, given a sequence of matrics, the goal is to find the most efficient way to multiply these matrices (with as few operations as possible). The multiplication is not performed; the solution is finding the sequences in each of the matrices that need to be multiplied
 - **All-pairs shortest paths in a graph**: This consists of finding the shortest path from vertex _u_ to vertex _v_ for all pairs of vertices(_u,v_). e.g. Floyed-Warshall algorithm
 
+## Solution
+
 <details><summary><p>Solution - The minimum coin change problem</p></summary>
 <p>
 
-## The minimum coin change problem
+### The minimum coin change problem
 
 - https://stackoverflow.com/questions/57135424/javascript-recursion-why-is-value-increasing-without-increment-code
 
@@ -65,7 +67,7 @@ dp[j] = Math.min(dp[j], dp[j - coin[i]]) + 1;
 <details><summary><p>Solution - The knapsack problem</p></summary>
 <p>
 
-## The Knapsack Problem
+### The Knapsack Problem
 
 The knapsack problem is a combinatorial optimization problem. It can be described as follows: given a fixed-size knapsack with a capacity to carry W amount of weight and a set of items that have a value and weight, find the best solution in a way to fill the knapsack with the most valuable items so that the total weight is less than or equal to W
 
@@ -328,7 +330,7 @@ kS[1][5] = Math.Max(3, 0) = 3
 <details><summary><p>Solution - The longest common subsequence</p></summary>
 <p>
 
-## The Longest Common Subsequence
+### The Longest Common Subsequence
 
 The **longest common subsequence (LCS)** consists of finding the length of the longest subsequence in two string sequences. The longest subsequence is a sequence that appears in the same relative order but is not necessarily contiguous (not a substring) in both strings.
 
@@ -347,7 +349,7 @@ LCS: `acad` with length 4
 <details><summary><p>Solution - Matrix Chain Multiplication</p></summary>
 <p>
 
-## Matrix Chain Multiplication
+### Matrix Chain Multiplication
 
 The problem consists of finding the best way (order) of multiplying a set of matrices.
 To multily two matrices, A being a matrix m by n, and B a matrix n by p. The result is matrix C, n by p. As multiplication is associative, we can muliply matrices in any order (Consider A*B*C\*D).
