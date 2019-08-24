@@ -19,8 +19,10 @@
 - **Matrix chain multiplication**: In this problem, given a sequence of matrics, the goal is to find the most efficient way to multiply these matrices (with as few operations as possible). The multiplication is not performed; the solution is finding the sequences in each of the matrices that need to be multiplied
 - **All-pairs shortest paths in a graph**: This consists of finding the shortest path from vertex _u_ to vertex _v_ for all pairs of vertices(_u,v_). e.g. Floyed-Warshall algorithm
 
-<details><summary><h2>The minimum coin change problem</h2></summary>
+<details><summary><p>Solution - The minimum coin change problem</p></summary>
 <p>
+
+## The minimum coin change problem
 
 - https://stackoverflow.com/questions/57135424/javascript-recursion-why-is-value-increasing-without-increment-code
 
@@ -60,8 +62,10 @@ dp[j] = Math.min(dp[j], dp[j - coin[i]]) + 1;
 </p>
 </details>
 
-<details><summary><h2>Solution - The knapsack problem</h2></summary>
+<details><summary><p>Solution - The knapsack problem</p></summary>
 <p>
+
+## The Knapsack Problem
 
 The knapsack problem is a combinatorial optimization problem. It can be described as follows: given a fixed-size knapsack with a capacity to carry W amount of weight and a set of items that have a value and weight, find the best solution in a way to fill the knapsack with the most valuable items so that the total weight is less than or equal to W
 
@@ -130,7 +134,7 @@ if (i === 0 || w === 0) {
 <details><summary><h4>i=1</h4></summary>
 <p>
 
-###### i=1, w=1
+##### i=1, w=1
 
 ```javascript
 weights[i - 1] <= w
@@ -151,7 +155,7 @@ kS[1][1] = kS[1 - 1][1] = kS[0][1] = 0
 |  **2**  |   0   |   -   |   -   |   -   |   -   |   -   |
 |  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
 
-###### i=1, w=2
+##### i=1, w=2
 
 ```javascript
 weights[i - 1] <= w
@@ -189,7 +193,7 @@ kS[1][2] = Math.Max(3, 0) = 3
 |  **2**  |   0   |   -   |   -   |   -   |   -   |   -   |
 |  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
 
-###### i=1, w=3
+##### i=1, w=3
 
 ```javascript
 weights[i - 1] <= w
@@ -227,7 +231,7 @@ kS[1][3] = Math.Max(3, 0) = 3
 |  **2**  |   0   |   -   |   -   |   -   |   -   |   -   |
 |  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
 
-###### i=1, w=4
+##### i=1, w=4
 
 ```javascript
 weights[i - 1] <= w
@@ -265,7 +269,7 @@ kS[1][4] = Math.Max(3, 0) = 3
 |  **2**  |   0   |   -   |   -   |   -   |   -   |   -   |
 |  **3**  |   0   |   -   |   -   |   -   |   -   |   -   |
 
-###### i=1, w=5
+##### i=1, w=5
 
 ```javascript
 weights[i - 1] <= w
@@ -321,8 +325,10 @@ kS[1][5] = Math.Max(3, 0) = 3
 </p>
 </details>
 
-<details><summary><h2>Solution - The longest common subsequence</h2></summary>
+<details><summary><p>Solution - The longest common subsequence</p></summary>
 <p>
+
+## The Longest Common Subsequence
 
 The **longest common subsequence (LCS)** consists of finding the length of the longest subsequence in two string sequences. The longest subsequence is a sequence that appears in the same relative order but is not necessarily contiguous (not a substring) in both strings.
 
@@ -338,8 +344,10 @@ LCS: `acad` with length 4
 </p>
 </details>
 
-<details><summary><h2>Solution - Matrix Chain Multiplication</h2></summary>
+<details><summary><p>Solution - Matrix Chain Multiplication</p></summary>
 <p>
+
+## Matrix Chain Multiplication
 
 The problem consists of finding the best way (order) of multiplying a set of matrices.
 To multily two matrices, A being a matrix m by n, and B a matrix n by p. The result is matrix C, n by p. As multiplication is associative, we can muliply matrices in any order (Consider A*B*C\*D).
