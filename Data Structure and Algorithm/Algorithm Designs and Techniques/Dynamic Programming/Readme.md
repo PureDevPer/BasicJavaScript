@@ -627,10 +627,9 @@ kS[3][7] = Math.Max(5, 7) = 7
 </p>
 </details>
 
-<!--
+
 <details><summary><p>The longest common subsequence</p></summary>
 <p>
--->
 
 ### The Longest Common Subsequence
 
