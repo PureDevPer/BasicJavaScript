@@ -58,10 +58,17 @@ class CircularLinkedList {
 				if (this.count === 1) {
 					this.head = null;
 				} else {
+					// As head reference will change, we need to update the reference to teh last node's next property
+
+					// We first keep a reference to the current head element, which is going to be removed from the list
 					const removed = this.head;
+					// We need to get the reference to the last node of the list, which will be stored in the current variable
 					current = this.getElementAt(this.count);
+					// Update head.element, linking the head to the second element
 					this.head = this.head.next;
+					// Link the last element (current.next) to the new head
 					current.next = this.head;
+					// Update the reference of the current variable
 					current = removed;
 				}
 			} else {
