@@ -27,6 +27,17 @@ class LinkedList {
 		this.count++;
 	}
 
+	getElementAt(index) {
+		if (index >= 0 && index <= this.count) {
+			let node = this.head;
+			for (let i = 0; i < index && node !== null; ++i) {
+				node = node.next;
+			}
+			return node;
+		}
+		return null;
+	}
+
 	removeAt(index) {
 		if (index >= 0 && index < this.count) {
 			let current = this.head;
@@ -50,8 +61,8 @@ class LinkedList {
 
 	indexOf(element) {
 		let current = this.head;
-		for (let i = 0; i < this.size() && current != null; i++) {
-			if (this.equalsFn(element, current.element)) {
+		for (let i = 0; i < this.size() && current !== null; i++) {
+			if (element === current.element) {
 				return i;
 			}
 			current = current.next;
@@ -102,7 +113,7 @@ class HashTableSeparateChaining {
 		this.toStrFn = toStrFn;
 	}
 
-	loseloseHashCode(key) {
+	hashCode(key) {
 		if (typeof key === 'number') {
 			return key;
 		}
@@ -114,10 +125,6 @@ class HashTableSeparateChaining {
 		}
 		// Use the rest of the division of the hash number using an arbitrary number
 		return hash % 37;
-	}
-
-	hashCode(key) {
-		return this.loseloseHashCode(key);
 	}
 
 	put(key, value) {
