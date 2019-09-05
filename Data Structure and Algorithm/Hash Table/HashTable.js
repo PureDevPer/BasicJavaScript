@@ -1,14 +1,3 @@
-class ValuePair {
-	constructor(key, value) {
-		this.key = key;
-		this.value = value;
-	}
-
-	toString() {
-		return `[#${this.key}: ${this.value}]`;
-	}
-}
-
 const defaultToString = item => {
 	if (item === null) {
 		return 'NULL';
@@ -22,13 +11,24 @@ const defaultToString = item => {
 	return item.toString();
 };
 
+class ValuePair {
+	constructor(key, value) {
+		this.key = key;
+		this.value = value;
+	}
+
+	toString() {
+		return `[#${this.key}: ${this.value}]`;
+	}
+}
+
 class HashTable {
 	constructor(toStrFn = defaultToString) {
 		this.table = {};
 		this.toStrFn = toStrFn;
 	}
 
-	loseloseHashCode(key) {
+	hashCode(key) {
 		if (typeof key === 'number') {
 			return key;
 		}
@@ -40,10 +40,6 @@ class HashTable {
 		}
 		// Use the rest of the division of the hash number using an arbitrary number
 		return hash % 37;
-	}
-
-	hashCode(key) {
-		return this.loseloseHashCode(key);
 	}
 
 	put(key, value) {
@@ -114,7 +110,7 @@ console.log(hash.get('Gandalf')); // gandalf@gmail.com
 console.log(hash.get('Loiane')); // null
 
 hash.remove('Gandalf');
-console.log(hash.get('Gandalf')); // undefined
+console.log(hash.get('Gandalf')); // null
 
 console.log(hash.toString());
 // {16 => [#Tyrion: tyrion@gmail.com]}, {29 => [#John: johnsnow@gmail.com]}
