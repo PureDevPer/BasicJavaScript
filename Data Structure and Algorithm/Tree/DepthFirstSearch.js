@@ -29,7 +29,7 @@ class DepthFirstSearch {
 		}
 	}
 
-	BFS(rootNode = null) {
+	DFS(rootNode = null) {
 		if (rootNode === null) return null;
 
 		let stack = [];
@@ -56,7 +56,7 @@ tree.insert(9);
 
 const tree1 = new DepthFirstSearch();
 
-console.log(tree1.BFS(tree)); // [11, 15, 7, 9, 5, 3]
+console.log(tree1.DFS(tree)); // [11, 15, 7, 9, 5, 3]
 
 //        11
 //       /  \
