@@ -29,7 +29,7 @@ class BreadthFirstSearch {
 		}
 	}
 
-	BFS(rootNode = null) {
+	BFS(rootNode) {
 		if (rootNode === null) return null;
 
 		const queue = [];
