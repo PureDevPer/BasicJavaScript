@@ -29,7 +29,7 @@ class DepthFirstSearch {
 		}
 	}
 
-	DFS(rootNode = null) {
+	DFS(rootNode) {
 		if (rootNode === null) return null;
 
 		let stack = [];
