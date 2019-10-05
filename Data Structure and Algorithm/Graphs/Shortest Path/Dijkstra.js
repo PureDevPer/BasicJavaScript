@@ -16,13 +16,22 @@ const dijkstra = (graph, src) => {
 	const dist = [];
 	const visited = [];
 	const { length } = graph;
+
+	//  Initialize all distance (dist) as infinite
+	// visited[] = false
 	for (let i = 0; i < length; ++i) {
 		dist[i] = INF;
 		visited[i] = false;
 	}
+
+	// Set the distance of the source from itself as 0
 	dist[src] = 0;
+
+	// Find the shortest path for all vertices
 	for (let i = 0; i < length - 1; ++i) {
+		// Select the min distance vertex from the set of vertices that haven't been processed yet
 		const u = minDistance(dist, visited);
+		// Mark the selected vertex as true
 		visited[u] = true;
 		for (let v = 0; v < length; ++v) {
 			if (
@@ -31,6 +40,7 @@ const dijkstra = (graph, src) => {
 				dist[u] !== INF &&
 				dist[u] + graph[u][v] < dist[v]
 			) {
+				// If the shortest path is found, set the new value for the shortest path
 				dist[v] = dist[u] + graph[u][v];
 			}
 		}
@@ -39,6 +49,7 @@ const dijkstra = (graph, src) => {
 };
 
 const graph = [
+	//A B  C  D  E  F
 	[0, 2, 4, 0, 0, 0],
 	[0, 0, 1, 4, 2, 0],
 	[0, 0, 0, 0, 3, 0],
