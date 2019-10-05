@@ -51,12 +51,28 @@ const dijkstra = (graph, src) => {
 const graph = [
 	//A B  C  D  E  F
 	[0, 2, 4, 0, 0, 0],
-	[0, 0, 1, 4, 2, 0],
+	[0, 0, 2, 4, 2, 0],
 	[0, 0, 0, 0, 3, 0],
 	[0, 0, 0, 0, 0, 2],
 	[0, 0, 0, 3, 0, 2],
 	[0, 0, 0, 0, 0, 0]
 ];
-for (let i = 0; i < graph.length; ++i) {
-	console.log(dijkstra(graph, i));
+
+const result = dijkstra(graph, 0);
+console.log(result); // [0, 2, 4, 6, 4, 6]
+
+console.log('vertex\tDistance from A');
+for (let i = 0; i < graph.length; i++) {
+	const temp = i + 65;
+	console.log(`${String.fromCharCode(temp)}\t${result[i]}`);
 }
+
+/*
+vertex	Distance from A 
+A	0 
+B	2 
+C	4 
+D	6 
+E	4 
+F	6 
+*/
